@@ -77,8 +77,14 @@ var InfoPage = React.createClass({
                 <div className="form">
                     {this.props.viewModel.message}
                     <div className="mapImage">
-                        <img src={this.props.viewModel.location}/>
+                         <div> Location 1</div>
+                        <img src={this.props.viewModel.location2[0]}/>
+                          <div> Location 2</div>
+                        <img src={this.props.viewModel.location2[1]}/>
                     </div>
+                    <div>
+                        <button type="button" onClick={this.searchCode}>+</button> 
+                         </div>
                 </div>
             </div>
         )
