@@ -1,15 +1,30 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8" />
-    <title>Hello React!</title>
-    <script src="build/react.js"></script>
-    <script src="build/react-dom.js"></script>
-    <script src="node_modules/requirejs/require.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
-  </head>
-  <body>
-    <div id="example"></div>
-    <script type="text/babel" src="src/app.js"></script>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <title>Hello React!</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script src="build/react.js"></script>
+  <script src="build/react-dom.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyB1GLP-jAwNt4mfzA2XYNNB5jLhcWUauuE",
+    authDomain: "awolkandi.firebaseapp.com",
+    databaseURL: "https://awolkandi.firebaseio.com",
+    storageBucket: "awolkandi.appspot.com",
+  };
+  firebase.initializeApp(config);
+
+  </script>
+</head>
+
+<body>
+  <div class="appContainer" id="example"></div>
+  <script type="text/babel" src="src/container.js">
+  </script>
+</body>
+
 </html>
