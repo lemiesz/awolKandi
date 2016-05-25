@@ -16,13 +16,17 @@ var App = React.createClass({
         // TODO: this is very bad stop
         this.setState({ viewKey: "InfoPage", infoPageViewModel: viewModel });
     },
+    
+    infoPageCallback: function() {
+       this.setState({ viewKey: "InputBox"});
+    },
 
     switchView: function (viewKey) {
         switch (viewKey) {
             case "InputBox":
                 return (<InputBox callback={this.inputBoxCallback}/>);
             case "InfoPage":
-                return (<InfoPage viewModel = {this.state.infoPageViewModel}/>)
+                return (<InfoPage callback={this.infoPageCallback} viewModel = {this.state.infoPageViewModel}/>)
         }
     }
 })
@@ -56,10 +60,10 @@ var InputBox = React.createClass({
         return (
             <div className={searchCodeClassName}>
                 <div className="form">
-                    <form onSubmit={this.searchCode} className="login-form">
+                    <div onSubmit={null}  className="login-form">
                         <input ref="textField" type="text" placeholder="unique code"/>
                         <button type="button" onClick={this.searchCode}>find code</button>
-                    </form>
+                    </div>
                 </div>
             </div>
         )
@@ -68,23 +72,31 @@ var InputBox = React.createClass({
 
 var InfoPage = React.createClass({
     propTypes: {
-        viewModel: React.PropTypes.object
+        viewModel: React.PropTypes.object,
+        callback: React.PropTypes.func
     },
-    
-    render: function() {
-        return(
+
+    switchPage: function() {
+        this.props.callback();    
+    },
+
+    render: function () {
+        return (
             <div className="login-page show">
                 <div className="form">
+                    <div>
+                        <button type="button" onClick={this.switchPage}>Back to Search</button>
+                    </div>
                     {this.props.viewModel.message}
                     <div className="mapImage">
-                         <div> Location 1</div>
+                        <div> Location 1</div>
                         <img src={this.props.viewModel.location2[0]}/>
-                          <div> Location 2</div>
+                        <div> Location 2</div>
                         <img src={this.props.viewModel.location2[1]}/>
                     </div>
                     <div>
-                        <button type="button" onClick={this.searchCode}>+</button> 
-                         </div>
+                        <button type="button" onClick={this.searchCode}>+</button>
+                    </div>
                 </div>
             </div>
         )

@@ -111,6 +111,9 @@ button:hover,button:active,button:focus {
   color: #EF3B3A;
 }
 
+.backButton {
+   width: 40%;
+}
 
 body {
   background: #76b852; /* fallback for old browsers */
