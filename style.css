@@ -111,6 +111,13 @@ button:hover,button:active,button:focus {
   color: #EF3B3A;
 }
 
+<<<<<<< HEAD
+=======
+.backButton {
+   width: 40%;
+}
+
+>>>>>>> bfc3a379396024da63129482853528797932ef30
 body {
   background: #76b852; /* fallback for old browsers */
   background: -webkit-linear-gradient(right, #76b852, #8DC26F);
