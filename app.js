@@ -1,4 +1,11 @@
-ReactDOM.render(
-  <h1>Hello, world!</h1>,
-  document.getElementById('example')
-);
+var ContainerClass = require("app2.js");
+
+var ContainerClass = React.createClass({
+	render: function () {
+		return(
+			  <div><ContainerClass/><div>,
+
+			  )
+	}
+})
+
